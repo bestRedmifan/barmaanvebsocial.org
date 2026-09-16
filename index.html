@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Barmaan Social Media</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>📱 Barmaan Social Media</h1>
+  <p>Shared posts • GMT+3:30</p>
+</header>
+
+<main>
+
+  <section class="card">
+    <h2>Create post</h2>
+    <div id="steps"></div>
+  </section>
+
+  <section>
+    <h2>Feed</h2>
+    <div id="feed"></div>
+  </section>
+
+  <button class="adminBtn" onclick="openAdmin()">⚙️ Admin</button>
+
+</main>
+
+<dialog id="admin">
+  <div class="card">
+    <button class="x" onclick="admin.close()">×</button>
+    <div id="adminBox"></div>
+  </div>
+</dialog>
+
+<script src="script.js"></script>
+
+<script>
+async function loadSharedPosts() {
+  const feed = document.getElementById("feed");
+
+  try {
+    const response = await fetch("posts.json", {
+      cache: "no-store"
+    });
+
+    if (!response.ok) {
+      throw new Error("posts.json could not be loaded");
+    }
+
+    const data = await response.json();
+
+    if (!data.posts || data.posts.length === 0) {
+      feed.innerHTML = "<p class='muted'>No shared posts yet.</p>";
+      return;
+    }
+
+    data.posts.forEach(post => {
+      const article = document.createElement("article");
+      article.className = "post";
+
+      const title = document.createElement("div");
+      title.innerHTML =
+        "<span class='tag'>" +
+        escapeHTML(post.type || "Post") +
+        "</span>";
+
+      article.appendChild(title);
+
+      if (post.caption) {
+        const caption = document.createElement("p");
+        caption.textContent = post.caption;
+        article.appendChild(caption);
+      }
+
+      if (
+        post.mediaType === "video/mp4" &&
+        post.media
+      ) {
+        const video = document.createElement("video");
+
+        video.controls = true;
+        video.playsInline = true;
+        video.preload = "metadata";
+        video.src = post.media;
+
+        article.appendChild(video);
+      }
+
+      if (post.createdAt) {
+        const time = document.createElement("small");
+        time.textContent = "Posted: " + post.createdAt;
+        article.appendChild(time);
+      }
+
+      feed.appendChild(article);
+    });
+
+  } catch (error) {
+    console.error(error);
+
+    feed.innerHTML =
+      "<p class='muted'>Unable to load shared posts.</p>";
+  }
+}
+
+function escapeHTML(text) {
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+loadSharedPosts();
+</script>
+
+</body>
+</html>
