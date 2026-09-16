@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Barmaan Social Media</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="siteHeader">
+  <div class="headerInner">
+    <h1>📱 Barmaan Social Media</h1>
+    <p>Shared posts • GMT+3:30</p>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="card createCard">
+
+    <div class="sectionTitle">
+      <h2>Create post</h2>
+      <span class="statusDot"></span>
+    </div>
+
+    <p class="muted">
+      All post subjects are open.
+    </p>
+
+    <div class="createGrid">
+
+      <article class="createBox">
+        <span class="tag">Short</span>
+        <h3>Create Short</h3>
+
+        <label for="shortFile">
+          Upload video
+        </label>
+
+        <input
+          id="shortFile"
+          type="file"
+          accept="video/*"
+          onchange="checkMedia(
+            'shortFile',
+            'shortInfo',
+            'shortMsg',
+            'Short'
+          )">
+
+        <div
+          id="shortInfo"
+          class="fileInfo"
+          hidden>
+        </div>
+
+        <label for="shortCaption">
+          Caption
+        </label>
+
+        <textarea
+          id="shortCaption"
+          placeholder="Write the caption..."></textarea>
+
+        <button
+          class="ok"
+          type="button"
+          onclick="createMediaPost('Short')">
+          Post Short
+        </button>
+
+        <div
+          id="shortMsg"
+          class="messageBox">
+        </div>
+      </article>
+
+
+      <article class="createBox">
+        <span class="tag">News Short</span>
+        <h3>Create News Short</h3>
+
+        <label for="newsFile">
+          Upload video
+        </label>
+
+        <input
+          id="newsFile"
+          type="file"
+          accept="video/*"
+          onchange="checkMedia(
+            'newsFile',
+            'newsInfo',
+            'newsMsg',
+            'News Short'
+          )">
+
+        <div
+          id="newsInfo"
+          class="fileInfo"
+          hidden>
+        </div>
+
+        <label for="newsCaption">
+          Caption
+        </label>
+
+        <textarea
+          id="newsCaption"
+          placeholder="Write the news caption..."></textarea>
+
+        <button
+          class="ok"
+          type="button"
+          onclick="createMediaPost('News Short')">
+          Post News Short
+        </button>
+
+        <div
+          id="newsMsg"
+          class="messageBox">
+        </div>
+      </article>
+
+
+      <article class="createBox">
+        <span class="tag">Photo</span>
+        <h3>Create Photo</h3>
+
+        <label for="photoFile">
+          Upload image
+        </label>
+
+        <input
+          id="photoFile"
+          type="file"
+          accept="image/*"
+          onchange="checkMedia(
+            'photoFile',
+            'photoInfo',
+            'photoMsg',
+            'Photo'
+          )">
+
+        <div
+          id="photoInfo"
+          class="fileInfo"
+          hidden>
+        </div>
+
+        <label for="photoCaption">
+          Caption
+        </label>
+
+        <textarea
+          id="photoCaption"
+          placeholder="Write the caption..."></textarea>
+
+        <button
+          class="ok"
+          type="button"
+          onclick="createMediaPost('Photo')">
+          Post Photo
+        </button>
+
+        <div
+          id="photoMsg"
+          class="messageBox">
+        </div>
+      </article>
+
+
+      <article class="createBox">
+        <span class="tag">Poll</span>
+        <h3>Create Poll</h3>
+
+        <label>
+          Poll / quiz options (2–5)
+        </label>
+
+        <div
+          id="pollOptions"
+          class="optionList">
+
+          <input
+            class="pollOption"
+            placeholder="Option 1">
+
+          <input
+            class="pollOption"
+            placeholder="Option 2">
+
+        </div>
+
+        <button
+          type="button"
+          onclick="addPollOption()">
+          + Add option
+        </button>
+
+        <label for="pollCorrect">
+          Correct option
+        </label>
+
+        <select id="pollCorrect">
+          <option value="">
+            No correct answer
+          </option>
+
+          <option value="0">
+            Option 1
+          </option>
+
+          <option value="1">
+            Option 2
+          </option>
+        </select>
+
+        <label for="pollCaption">
+          Caption
+        </label>
+
+        <textarea
+          id="pollCaption"
+          placeholder="Write the poll caption..."></textarea>
+
+        <button
+          class="ok"
+          type="button"
+          onclick="createPoll()">
+          Post Poll
+        </button>
+
+        <div
+          id="pollMsg"
+          class="messageBox">
+        </div>
+      </article>
+
+
+      <article class="createBox">
+        <span class="tag">Text</span>
+        <h3>Create Text</h3>
+
+        <label for="textCaption">
+          Text
+        </label>
+
+        <textarea
+          id="textCaption"
+          class="largeText"
+          placeholder="Write your text..."></textarea>
+
+        <button
+          class="ok"
+          type="button"
+          onclick="createText()">
+          Post Text
+        </button>
+
+        <div
+          id="textMsg"
+          class="messageBox">
+        </div>
+      </article>
+
+
+      <article class="createBox publicBox">
+        <span class="tag">Public</span>
+
+        <h3>Public</h3>
+
+        <p class="muted">
+          This area is not available.
+        </p>
+
+        <button
+          class="publicButton"
+          type="button"
+          onclick="openPublicError()">
+          Public
+        </button>
+      </article>
+
+    </div>
+  </section>
+
+
+  <section class="feedSection">
+
+    <div class="sectionTitle">
+      <h2>Feed</h2>
+
+      <button
+        class="refreshButton"
+        type="button"
+        onclick="renderFeed()">
+        ↻ Refresh
+      </button>
+    </div>
+
+    <div id="feed"></div>
+
+  </section>
+
+</main>
+
+
+<dialog
+  id="publicDialog"
+  class="publicDialog">
+
+  <div class="errorCard">
+
+    <div class="errorIcon">
+      🚫
+    </div>
+
+    <h2>
+      ERROR 403
+    </h2>
+
+    <p class="errorMain">
+      You don't have permission to do this
+    </p>
+
+    <p class="errorSmall">
+      thats all we know
+    </p>
+
+    <button
+      class="backButton"
+      type="button"
+      onclick="closePublicError()">
+      ← Back
+    </button>
+
+  </div>
+
+</dialog>
+
+<script src="script.js"></script>
+
+</body>
+</html>
