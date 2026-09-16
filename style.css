@@ -1,0 +1,86 @@
+/* ====== General ====== */
+
+.post {
+  background: #f7f7f7;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00000020;
+}
+
+.subject-container {
+  margin-bottom: 15px;
+}
+
+.post-body {
+  margin-top: 10px;
+}
+
+/* ====== See Button ====== */
+
+.see-button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.see-button:hover {
+  background: #005fcc;
+}
+
+/* ====== Poll Original ====== */
+
+.poll-option {
+  padding: 12px;
+  margin: 6px 0;
+  background: #eaeaea;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  border: 2px solid transparent;
+}
+
+.poll-option:hover {
+  background: #dcdcdc;
+}
+
+/* وقتی انتخاب شد */
+.poll-option.selected {
+  background: #ffffff;
+  border-color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 8px #00000030;
+}
+
+/* ====== Poll Quiz ====== */
+
+.poll-option.correct {
+  background: #c8ffcf;
+  border-color: #00a82d;
+  font-weight: bold;
+}
+
+.poll-option.wrong {
+  background: #ffd0d0;
+  border-color: #ff3b3b;
+  font-weight: bold;
+}
+
+/* ====== Photo & Video ====== */
+
+.post-body img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.post-body video {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
