@@ -1,0 +1,404 @@
+* {
+  box-sizing: border-box;
+  }
+
+html {
+min-height: 100%;
+}
+
+body {
+margin: 0;
+min-height: 100vh;
+font: 15px Arial, sans-serif;
+background: #101827;
+color: #eef2ff;
+}
+
+button,
+input,
+select,
+textarea {
+font: inherit;
+border-radius: 10px;
+border: 1px solid #52627f;
+padding: 10px;
+}
+
+button {
+cursor: pointer;
+background: #253554;
+color: #fff;
+}
+
+button:hover {
+filter: brightness(1.15);
+}
+
+button:active {
+transform: translateY(1px);
+}
+
+input,
+select,
+textarea {
+width: 100%;
+background: #0f1726;
+color: #fff;
+margin: 5px 0;
+}
+
+textarea {
+min-height: 90px;
+resize: vertical;
+}
+
+label {
+display: block;
+margin-top: 12px;
+margin-bottom: 5px;
+}
+
+.siteHeader {
+padding: 22px;
+text-align: center;
+background: #172238;
+position: sticky;
+top: 0;
+z-index: 5;
+border-bottom: 1px solid #33415c;
+}
+
+.headerInner {
+max-width: 900px;
+margin: auto;
+}
+
+h1,
+h2,
+h3 {
+margin-top: 0;
+}
+
+h1 {
+margin-bottom: 10px;
+}
+
+h2 {
+margin-bottom: 12px;
+}
+
+h3 {
+margin-bottom: 8px;
+}
+
+.siteHeader p {
+margin: 0;
+opacity: .7;
+}
+
+.page {
+max-width: 900px;
+margin: auto;
+padding: 18px;
+}
+
+.card,
+.post {
+background: #182338;
+border: 1px solid #33415c;
+border-radius: 16px;
+padding: 16px;
+margin: 12px 0;
+box-shadow: 0 5px 20px #0003;
+}
+
+.createCard {
+overflow: hidden;
+}
+
+.sectionTitle {
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 10px;
+}
+
+.sectionTitle h2 {
+margin-bottom: 0;
+}
+
+.statusDot {
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background: #4caf50;
+display: inline-block;
+}
+
+.subjectButtons {
+display: grid;
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(120px, 1fr)
+);
+gap: 8px;
+margin-top: 8px;
+}
+
+.subjectButton {
+min-height: 44px;
+}
+
+.subjectButton.active {
+border-color: #8da7d8;
+background: #34496e;
+}
+
+.publicButton {
+background: #3b314f;
+}
+
+.postForm {
+margin-top: 14px;
+}
+
+.refreshButton {
+padding: 8px 12px;
+}
+
+.grid {
+display: grid;
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(120px, 1fr)
+);
+gap: 8px;
+}
+
+.row {
+display: flex;
+gap: 8px;
+flex-wrap: wrap;
+}
+
+.row > * {
+flex: 1;
+}
+
+.slot {
+width: 100%;
+text-align: left;
+padding: 10px;
+border: 1px dashed #53627c;
+border-radius: 10px;
+margin: 4px 0;
+}
+
+.optionList {
+display: flex;
+flex-direction: column;
+gap: 4px;
+}
+
+.pollButtons {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-top: 8px;
+}
+
+.pollButtons button {
+flex: 1 1 140px;
+}
+
+.post img,
+.post video {
+display: block;
+max-width: 100%;
+max-height: 420px;
+border-radius: 12px;
+margin-top: 8px;
+}
+
+.post video {
+width: 100%;
+background: #000;
+}
+
+.post small {
+opacity: .65;
+}
+
+.post p {
+line-height: 1.5;
+}
+
+.tag {
+display: inline-block;
+padding: 4px 8px;
+border-radius: 20px;
+background: #293a5c;
+margin: 2px;
+}
+
+.muted {
+opacity: .7;
+}
+
+.notice {
+padding: 10px;
+border-radius: 10px;
+background: #30271a;
+margin: 8px 0;
+}
+
+.ok {
+background: #24543d;
+}
+
+.danger {
+background: #652b35;
+}
+
+.warn {
+background: #63501d;
+}
+
+.messageBox {
+margin-top: 10px;
+}
+
+.successMessage {
+padding: 10px;
+border-radius: 10px;
+background: #24543d;
+}
+
+.errorMessage {
+padding: 10px;
+border-radius: 10px;
+background: #652b35;
+}
+
+.fileInfo {
+padding: 8px;
+border-radius: 8px;
+background: #111a2a;
+margin-top: 8px;
+}
+
+.emptyState {
+text-align: center;
+padding: 20px;
+}
+
+.feedSection {
+margin-top: 22px;
+}
+
+.publicDialog {
+border: 0;
+border-radius: 18px;
+background: #101827;
+color: #fff;
+width: min(520px, 94vw);
+padding: 0;
+}
+
+.publicDialog::backdrop {
+background: #0009;
+}
+
+.errorCard {
+padding: 28px;
+text-align: center;
+}
+
+.errorIcon {
+font-size: 48px;
+margin-bottom: 10px;
+}
+
+.errorCard h2 {
+font-size: 28px;
+margin-bottom: 12px;
+}
+
+.errorMain {
+font-size: 17px;
+margin: 8px 0;
+}
+
+.errorSmall {
+opacity: .65;
+margin-bottom: 22px;
+}
+
+.backButton {
+min-width: 120px;
+}
+
+#steps {
+display: block;
+}
+
+#feed {
+min-height: 20px;
+}
+
+@media (max-width: 600px) {
+
+.siteHeader {
+padding: 16px;
+}
+
+.page {
+padding: 12px;
+}
+
+.card,
+.post {
+padding: 13px;
+}
+
+.sectionTitle {
+align-items: flex-start;
+}
+
+.sectionTitle h2 {
+font-size: 20px;
+}
+
+.subjectButtons {
+grid-template-columns:
+repeat(2, 1fr);
+}
+
+.post video {
+max-height: 360px;
+}
+
+.errorCard {
+padding: 22px;
+}
+
+}
+
+@media (min-width: 601px) {
+
+.post {
+padding: 18px;
+}
+
+.createCard {
+padding: 20px;
+}
+
+}
+
+::selection {
+background: #52627f;
+color: #fff;
+}
