@@ -1,0 +1,85 @@
+/* ====== Dark Background ====== */
+body {
+  background: #000;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+/* ====== Post Box ====== */
+.post {
+  background: #111;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00000080;
+}
+
+/* ====== Subject ====== */
+.subject-container {
+  margin-bottom: 15px;
+}
+
+/* ====== See Button ====== */
+.see-button {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.see-button:hover {
+  background: #ddd;
+}
+
+/* ====== Poll Original ====== */
+.poll-option {
+  padding: 12px;
+  margin: 6px 0;
+  background: #222;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s;
+  border: 2px solid transparent;
+  user-select: none;
+  color: #fff;
+}
+
+/* Hover */
+.poll-option:hover {
+  background: #333;
+}
+
+/* Selected (هایلایت واقعی) */
+.poll-option.selected {
+  background: #fff !important;
+  color: #000 !important;
+  border-color: #fff !important;
+  font-weight: bold;
+  box-shadow: 0 0 8px #ffffff80;
+  transform: scale(1.02);
+}
+
+/* ====== Poll Quiz ====== */
+.poll-option.correct {
+  background: #00ff55 !important;
+  color: #000 !important;
+  font-weight: bold;
+}
+
+.poll-option.wrong {
+  background: #ff4444 !important;
+  color: #000 !important;
+  font-weight: bold;
+}
+
+/* ====== Photo & Video ====== */
+.post-body img,
+.post-body video {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
