@@ -88,3 +88,10 @@
     "blocked": false
   }
 ]
+{
+  "id": "photo-001",
+  "type": "photo",
+  "subject": "عکس خصوصی",
+  "file": "myphoto.jpg",
+  "code": "1257"
+}
