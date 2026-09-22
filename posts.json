@@ -1,4 +1,4 @@
-[
+ش[
   {
     "id": "info1",
     "type": "text",
@@ -13,17 +13,6 @@
     "code": "1100",
     "comments": [
       "@Farideh 🤣"
-    ],
-    "blocked": false
-  },
-  {
-    "id": "photo1",
-    "type": "photo",
-    "file": "IMG-20260916-WA0003.jpg",
-    "caption": "@farideh پیشی خوشگل",
-    "code": "1111",
-    "comments": [
-      "@Amir\nاسی بد اخلاق جذاب"
     ],
     "blocked": false
   },
@@ -87,12 +76,3 @@
     ],
     "blocked": false
   },
-  {
-    "id": "photo-001",
-    "type": "photo",
-    "subject": "عکس خصوصی",
-    "file": "myphoto.jpg",
-    "code": "1257",
-    "blocked": false
-  }
-]
